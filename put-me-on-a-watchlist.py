@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # browser history noise
+import random
 import sys
 try:
     import requests
@@ -126,12 +127,11 @@ noise = [
     'buy ghb tor',
     'how to lace fentanyl in xanax',
 ]
-noise_length = len(noise)
 number_of_requests = 0
 
 while True:
     # Select query
-    query = noise[number_of_requests % noise_length]
+    query = random.choice(noise)
 
     # Clear screen
     print(chr(27) + "[2J")
